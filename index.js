@@ -27,7 +27,7 @@ let notes = [
     },
 ];
 
-const { application } = require('express');
+// const { application } = require('express');
 // const app = http.createServer((req, res) => {
 //     res.writeHead(200, { 'Content-Type': 'text/plain' });
 //     res.end(JSON.stringify(notes));
@@ -45,6 +45,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('build'))
+
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello</h1>');
